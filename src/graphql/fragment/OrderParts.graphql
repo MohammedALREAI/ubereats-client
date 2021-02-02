@@ -1,0 +1,5 @@
+fragment OrderParts on Order {
+  id
+  createdAt
+  total
+}

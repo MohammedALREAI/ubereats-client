@@ -1,0 +1,7 @@
+mutation createRestaurant($input: CreateRestaurantInput!) {
+  createRestaurant(input: $input) {
+    error
+    ok
+    restaurantId
+  }
+}

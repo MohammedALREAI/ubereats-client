@@ -1,0 +1,3 @@
+ fragment VerifiedUser on User {
+                verified
+}

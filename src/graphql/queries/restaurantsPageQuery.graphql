@@ -1,0 +1,18 @@
+query restaurantsPage($input: RestaurantsInput!) {
+  allCategories {
+    ok
+    error
+    categories {
+      ...CategoryParts
+    }
+  }
+  restaurants(input: $input) {
+    ok
+    error
+    totalPages
+    totalResults
+    results {
+      ...RestaurantParts
+    }
+  }
+}

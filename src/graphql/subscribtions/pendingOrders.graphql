@@ -1,0 +1,10 @@
+# subscription pendingOrders {
+#   pendingOrders {
+#     id
+#     status
+#     total
+#     #   driver
+#     #   customer
+#     #   restaurant
+#   }
+# }

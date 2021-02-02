@@ -1,0 +1,6 @@
+.gitkeep
+.env*
+*.ico
+*.lock
+node_modules
+integrations

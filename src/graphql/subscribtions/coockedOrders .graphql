@@ -1,0 +1,10 @@
+subscription coockedOrders {
+  cookedOrders {
+    id
+    status
+    total
+    #     driver
+    #     customer
+    #     restaurant
+  }
+}

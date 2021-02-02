@@ -1,8 +1,16 @@
 {
-  "name": "nuber",
+  "name": "ubereatsFrontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.7",
+    "@apollo/react-hooks": "^4.0.0",
+    "@craco/craco": "^6.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@hookform/resolvers": "^1.3.2",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,17 +18,54 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "@types/yup": "^0.29.11",
+    "autoprefixer": "^9",
+    "global": "^4.4.0",
+    "graphql": "^15.4.0",
+    "postcss": "^7",
+    "postcss-import": "12.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.0.7",
+    "react-hook-form": "^6.14.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "typescript": "^4.1.3",
+    "victory": "^35.4.6",
+    "web-vitals": "^1.1.0",
+    "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "tailwind:prodbuild": "NODE_ENV=production npm run tailwind:build",
+    "tailwind:build": "tailwind build ./src/styles/tailwind.css -o ./src/styles/styles.css",
+    "start": " yarn  tailwind:build & react-scripts start",
+    "build": "CI=false react-scripts build",
+    "prebuild": "npm run tailwind:prodbuild",
+    "test": "react-scripts test ",
+    "test:coverage": "npm test -- --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "pregen": "rimraf generated ",
+    "gen": "graphql-codegen --config --watch codegen.yml",
+    "lint": "eslint --ignore-path .gitignore --ext \".js,.ts,.tsx\"  --fix."
+
+  },
+  "lint-staged":{
+
+    
+      "src/**/*.{ts,tsx}": [
+        "yarn  eslint . --fix",
+        "git add"
+      ]
+    
+  
+  },
+
+  "husky":{
+    "hooks": {
+      "pre-commit": "lint-staged "
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +83,43 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^2.0.2",
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/fragment-matcher": "2.0.1",
+    "@graphql-codegen/import-types-preset": "^1.18.1",
+    "@graphql-codegen/introspection": "1.18.1",
+    "@graphql-codegen/named-operations-object": "^1.17.9",
+    "@graphql-codegen/near-operation-file-preset": "^1.17.13",
+    "@graphql-codegen/typescript": "^1.20.0",
+    "@graphql-codegen/typescript-document-nodes": "1.17.9",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
+    "@graphql-codegen/typescript-operations": "^1.17.13",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "apollo": "^2.32.1",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-tailwind": "^0.2.0",
+    "graphql-to-typescript": "^0.1.2",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  },
+  "jest":{
+    "collectCoverageForm":[
+      "./src/components/**/*.tsx",
+      "./src/page/**/*.tsx",
+      "./src/Routers/*.tsx"
+
+
     ]
   }
 }

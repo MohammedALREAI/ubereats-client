@@ -1,0 +1,6 @@
+mutation createPayment($input: CreatePaymentInput!) {
+  createPayment(input: $input) {
+    ok
+    error
+  }
+}
