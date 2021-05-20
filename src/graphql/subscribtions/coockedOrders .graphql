@@ -3,8 +3,6 @@ subscription coockedOrders {
     id
     status
     total
-    #     driver
-    #     customer
-    #     restaurant
+       
   }
 }

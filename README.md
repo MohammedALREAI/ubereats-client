@@ -6,6 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+    "lint": "eslint --ignore-path .gitignore --ext \".js,.ts,.tsx\"  --fix."
+
+### Column Name
+- [ ] Task title ~3d #type @name yyyy-mm-dd  
+- [ ] Sub-task or description  
+
+### Completed Column ✓
+- [x] Completed task title  
+- [x] setup cypress with add some config 
+
+
+
 ### `yarn start`
 
 Runs the app in the development mode.\

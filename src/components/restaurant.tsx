@@ -28,3 +28,41 @@ export const Restaurant: React.FC<IRestaurantProps> = ({
     </div>
   </Link>
 );
+
+
+
+// function compare (version1:string,version2:string):number{
+// let lenV1=version1.length
+// let lenV2=version2.length
+// let indexV1=0
+// let indexV2=0
+// while(indexV1<lenV1 ||indexV2<lenV2){
+//   let num1=0;
+//   let num2=0;
+//   while(indexV1<lenV1 &&version1[indexV1]!=='.' ){
+//     let curNumberV1= Number(version1[indexV1])-0
+//     num1=num1*10+curNumberV1
+//     ++indexV1
+//   }
+//   while(indexV2<lenV2 &&version2[indexV2]!=='.' ){
+//     let curNumberV2= Number(version2[indexV2])-0
+//     num2=num2*10+curNumberV2
+//     ++indexV2
+//   }
+// if(num1>num2){
+//   return 1
+// }
+// if(num1<num2){
+//   return -1
+// }
+// else{
+//   indexV1++;
+//   indexV2++;}
+  
+// }
+
+  
+
+//   return 0
+
+// }

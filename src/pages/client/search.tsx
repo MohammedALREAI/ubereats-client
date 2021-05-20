@@ -25,8 +25,11 @@ export const Search = (props: Props) => {
   },[location,location])
   return (
     <div>
-
-    </div>
+    <Helmet>
+      <title>Search | Nuber Eats</title>
+    </Helmet>
+    <h1>Search page</h1>
+  </div>
   )
 }
 

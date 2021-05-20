@@ -7,10 +7,10 @@ interface IDishProps {
   description: string;
   name: string;
   price: number;
-  isCustomer?: Maybe<boolean>;
-  orderStarted?: Maybe<boolean>;
-  isSelected?: Maybe<boolean>;
-  options?: Maybe<Array<DishOption>>;
+  isCustomer?: boolean
+  orderStarted?: boolean
+  isSelected?: boolean
+  options?: Array<DishOption> | null
   addItemToOrder?: (dishId: number) => void;
   removeFromOrder?: (dishId: number) => void;
 }

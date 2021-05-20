@@ -66,7 +66,7 @@ export const Login = () => {
       <Helmet>
         <title>Login | Nuber Eats</title>
       </Helmet>
-      <div className="w-full max-w-screen-sm flex flex-col px-5 items-center">
+      <div className="w-full max-w-screen-sm flex flex-col px-5 items-center sm:mx-auto sm:w-full sm:max-w-md">
         <img src={nuberLogo} className="w-52 mb-10" alt="Nuber Eats" />
         <h4 className="w-full font-medium text-left text-3xl mb-5">
           Welcome back

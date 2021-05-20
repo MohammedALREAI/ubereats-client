@@ -45,7 +45,7 @@ export const Restaurant = () => {
       current.filter((dish) => dish.dishId !== dishId)
     );
   };
-  const addOptionToItem = (dishId: number, optionName: string) => {
+  const addOptionToItem = ( dishId: number, optionName: string) => {
     if (!isSelected(dishId)) {
       return;
     }

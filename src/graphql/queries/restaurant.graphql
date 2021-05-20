@@ -3,30 +3,17 @@ query restaurant($input: RestaurantInput!) {
     ok
     error
     restaurant {
-      id
-      name
-      coverImg
-      category {
-        id
-        name
-      }
-      address
-      isPromoted
+      ...RestaurantParts
+    }
       menu {
-        id
-        name
-        price
-        photo
-        description
-        options {
-          name
-          choices {
-            name
-            extra
-          }
-          extra
+        ...DishParts
+       
+        }
+        orders{
+          ...OrderParts
+
         }
       }
     }
-  }
-}
+  
+

@@ -7,7 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Button } from "../components/button";
 import {MessageError  } from "../components/Form/errorrMessage";
 import { Input } from "../components/Form/input";
-import { UserRole ,CreateAccountOutput,CreateAccountMutationMutationResult,useCreateAccountMutationMutation} from "../generated/graphql";
+import { UserRole ,useCreateAccountMutation} from "../generated/graphql";
 import {  schemaCreateAccount } from "../helper/LoginSchema";
 import nuberLogo from "../images/logo.svg";
 
@@ -36,7 +36,7 @@ export const CreateAccount = () => {
   
 
   const [ createAccountMutation, { data, loading, error }] = 
-  useCreateAccountMutationMutation(
+  useCreateAccountMutation(
     {
         onCompleted:(data)=>{
             const history = useHistory();

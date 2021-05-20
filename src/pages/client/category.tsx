@@ -20,8 +20,6 @@ export const Category = (props: Props) => {
        },
      }); 
   return (
-    <div>
-
-    </div>
+     <h1>Category</h1>
   )
 }

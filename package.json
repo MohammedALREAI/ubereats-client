@@ -20,7 +20,9 @@
     "@types/react-dom": "^16.9.8",
     "@types/yup": "^0.29.11",
     "autoprefixer": "^9",
+    "cypress": "^6.4.0",
     "global": "^4.4.0",
+    "google-map-react": "^2.1.9",
     "graphql": "^15.4.0",
     "postcss": "^7",
     "postcss-import": "12.0.0",
@@ -31,13 +33,15 @@
     "react-hook-form": "^6.14.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "rimraf": "^3.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.1.3",
-    "victory": "^35.4.6",
+    "victory": "^35.4.8",
     "web-vitals": "^1.1.0",
     "yup": "^0.32.8"
   },
   "scripts": {
+    "cypress": "yarn cypress open",
     "tailwind:prodbuild": "NODE_ENV=production npm run tailwind:build",
     "tailwind:build": "tailwind build ./src/styles/tailwind.css -o ./src/styles/styles.css",
     "start": " yarn  tailwind:build & react-scripts start",
@@ -47,25 +51,7 @@
     "test:coverage": "npm test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "pregen": "rimraf generated ",
-    "gen": "graphql-codegen --config --watch codegen.yml",
-    "lint": "eslint --ignore-path .gitignore --ext \".js,.ts,.tsx\"  --fix."
-
-  },
-  "lint-staged":{
-
-    
-      "src/**/*.{ts,tsx}": [
-        "yarn  eslint . --fix",
-        "git add"
-      ]
-    
-  
-  },
-
-  "husky":{
-    "hooks": {
-      "pre-commit": "lint-staged "
-    }
+    "gen": "graphql-codegen --config --watch codegen.yml"
   },
   "eslintConfig": {
     "extends": [
@@ -98,6 +84,7 @@
     "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
     "@graphql-codegen/typescript-operations": "^1.17.13",
     "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "@types/google-map-react": "^2.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
@@ -113,13 +100,11 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1"
   },
-  "jest":{
-    "collectCoverageForm":[
+  "jest": {
+    "collectCoverageForm": [
       "./src/components/**/*.tsx",
       "./src/page/**/*.tsx",
       "./src/Routers/*.tsx"
-
-
     ]
   }
 }
